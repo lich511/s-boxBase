@@ -1,0 +1,95 @@
+TestUI {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #444;
+	//justify-content: center;
+	align-items: center;
+	font-weight: bold;
+	//border-radius: 20px;
+	pointer-events: all;
+
+	.title {
+		font-size: 25px;
+		font-family: Poppins;
+		color: #fff;
+		background-color: red;
+		flex-direction: column;
+		width: 20%;
+		height: 70%;
+		padding: 10px;
+		margin: 20px;
+	}
+
+	.teb {
+		background-color: blue;
+		width: 300px;
+		height: 700px;
+		margin: 10px;
+		overflow-y: scroll;
+		overflow-x: hidden;
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.te {
+		width: 200px;
+		min-width: 200px;
+		height: 100px;
+		min-height: 100px;
+		background-color: red;
+		margin: 10px;
+	}
+	//--нормальные стили
+	.sTable {
+		background-color: black;
+		height: 80%;
+		width: 500px;
+		margin: 10px;
+		overflow-y: scroll;
+		overflow-x: hidden;
+		flex-direction: column;
+		align-items: flex-start;
+		border-radius: 10px;
+	}
+
+	.sCell {
+		width: 400px;
+		min-width: 400px;
+		height: 100px;
+		min-height: 100px;
+		background-color: #444;
+		color: white;
+		margin: 10px;
+		&:hover{
+			background-color: red;
+		}
+	}
+
+	.menu {
+		height: 80%;
+		width: 500px;
+		margin: 10px;
+		background-color: black;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.butt {
+		height: 200px;
+		min-height: 200px;
+		width: 300px;
+		min-width: 300px;
+		margin: 100px;
+		background-color: red;
+		align-items:center;
+		justify-content:center;
+
+		&:hover {
+			background-color: blue;
+			border-radius: 10px;
+		}
+	}
+}

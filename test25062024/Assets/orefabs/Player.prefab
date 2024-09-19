@@ -1,0 +1,91 @@
+{
+  "RootObject": {
+    "__guid": "59269f5b-4d13-4516-bd7c-40a88e156060",
+    "Flags": 0,
+    "Name": "player",
+    "Tags": "player",
+    "Enabled": true,
+    "NetworkMode": 1,
+    "Components": [
+      {
+        "__type": "Sandbox.CharacterController",
+        "__guid": "a4b505ca-be60-4c0c-8b18-97969ead3ebd",
+        "Acceleration": 10,
+        "Bounciness": 0.3,
+        "GroundAngle": 45,
+        "Height": 64,
+        "IgnoreLayers": "",
+        "Radius": 16,
+        "StepHeight": 18,
+        "UseCollisionRules": true
+      },
+      {
+        "__type": "BaseScript",
+        "__guid": "54515260-4990-4e87-975d-6e78ff6bb416",
+        "AirControl": 0.1,
+        "CrouchSpeed": 145,
+        "GroundControl": 4,
+        "JumpForce": 400,
+        "MaxForce": 50,
+        "PrefabCamera": {
+          "_type": "gameobject",
+          "prefab": "orefabs/camera.prefab"
+        },
+        "RunSpeed": 290,
+        "Speed": 160,
+        "WalkSpeed": 90
+      }
+    ],
+    "Children": [
+      {
+        "__guid": "8c716071-5a83-4395-8e4a-d1771f651899",
+        "Flags": 0,
+        "Name": "Body",
+        "Enabled": true,
+        "NetworkMode": 1,
+        "Components": [
+          {
+            "__type": "Sandbox.SkinnedModelRenderer",
+            "__guid": "88416bd7-86a5-4c43-ac6e-5eb01bb78cd5",
+            "BodyGroups": 341,
+            "CreateBoneObjects": false,
+            "Model": "models/citizen/citizen.vmdl",
+            "RenderType": "On",
+            "Tint": "1,1,1,1",
+            "UseAnimGraph": true
+          },
+          {
+            "__type": "Sandbox.Citizen.CitizenAnimationHelper",
+            "__guid": "0fb7513b-700b-4e26-88e6-2411f080e9fd",
+            "BodyWeight": 1,
+            "EyesWeight": 1,
+            "HeadWeight": 1,
+            "Height": 1,
+            "LookAtEnabled": false,
+            "Target": {
+              "_type": "component",
+              "component_id": "88416bd7-86a5-4c43-ac6e-5eb01bb78cd5",
+              "go": "8c716071-5a83-4395-8e4a-d1771f651899",
+              "component_type": "SkinnedModelRenderer"
+            }
+          }
+        ]
+      },
+      {
+        "__guid": "80322ecd-18db-4034-9b8c-6cc3948dd79c",
+        "Flags": 0,
+        "Name": "Head",
+        "Position": "0,0,64",
+        "Enabled": true,
+        "NetworkMode": 1
+      }
+    ],
+    "__variables": []
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__references": [],
+  "__version": 1
+}

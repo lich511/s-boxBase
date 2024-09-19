@@ -1,0 +1,86 @@
+@using Sandbox;
+@using Sandbox.Diagnostics;
+@using Sandbox.Network;
+@using Sandbox.UI;
+@inherits PanelComponent
+
+<root>
+	@* <div class="teb">
+		<div class="te">"test1"</div>
+		<div class="te">"test2"</div>
+		<div class="te">"test3"</div>
+		<div class="te">"test4"</div>
+		<div class="te">"test5"</div>
+		<div class="te">"test1"</div>
+		<div class="te">"test2"</div>
+		<div class="te">"test3"</div>
+		<div class="te">"test4"</div>
+		<div class="te">"test5"</div>
+	</div>
+	<div class="title">@MyStringValue</div>
+	<div class="title">"test1"</div> *@
+	<div class="sTable">
+		@for (int i = 0; i < 10; i++)
+		{
+			<div class="sCell">@("DATA "+i.ToString())</div>
+		}
+	</div>
+	<div class="sTable">
+		@for (int i = 0; i < ccount; i++)
+		{
+			<div class="sCell" onclick="@(() => connectClick(i))"> @(lobbies[i].LobbyId) </div>
+		}
+	</div>
+	<div class="menu">
+		<div class="butt" onclick=@createClick>CREATE</div>
+		<div class="butt" onclick=@refreshClick>REFRESH</div>
+	</div>
+</root>
+
+@code
+{
+	public int ccount = 0;
+	public List<LobbyInformation> lobbies;
+
+	[Property] public SceneFile scenegame;
+
+	[Property, TextArea] public string MyStringValue { get; set; } = "Hello World!";
+	/// <summary>
+	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
+	/// </summary>
+	protected override int BuildHash() => System.HashCode.Combine( MyStringValue );
+
+	async protected override void OnStart()
+	{
+		lobbies = await GameNetworkSystem.QueryLobbies();
+		ccount = lobbies.Count;
+
+		Logger Log = new Logger(name: "Player:");
+		Log.Info("START");
+		base.OnStart();
+	}
+	void createClick()
+	{
+		GameNetworkSystem.CreateLobby();
+		Scene.Load(scenegame);
+	}
+	async void refreshClick()
+	{
+		Logger Log = new Logger(name: "TEST:");
+		Log.Info("AAAAAAAAAAAAAAAAA2");
+
+		lobbies = await GameNetworkSystem.QueryLobbies();
+		ccount = lobbies.Count;
+
+		Log.Info(lobbies.Count);
+		Log.Info("BBBBBBBBBBBBBBBBB");
+	}
+	void connectClick(int lid)
+	{
+		Logger Log = new Logger(name: "TEST:");
+		Log.Info("CCCCCCCCCCCCCCCC2");
+		Log.Info(lid);
+		Log.Info(lid-1);
+		GameNetworkSystem.Connect(lobbies[lid-1].LobbyId);
+	}
+}

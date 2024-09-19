@@ -1,0 +1,139 @@
+{
+  "RootObject": {
+    "__guid": "55597454-20c7-4296-96ea-82c0885e0f54",
+    "Flags": 0,
+    "Name": "Player",
+    "Position": "-137.0965,-27.69199,131.6602",
+    "Tags": "player",
+    "Enabled": true,
+    "Components": [
+      {
+        "__type": "Sandbox.CharacterController",
+        "__guid": "52df66f7-c4fd-4f2a-9cb0-5b404d1aa91b",
+        "Acceleration": 10,
+        "Bounciness": 0.3,
+        "GroundAngle": 45,
+        "Height": 64,
+        "IgnoreLayers": "player",
+        "Radius": 16,
+        "StepHeight": 18,
+        "UseCollisionRules": false
+      },
+      {
+        "__type": "PlayerScript2",
+        "__guid": "665a22d1-f117-4805-b7f6-e61e229bd146",
+        "AirControl": 0.1,
+        "Body": {
+          "_type": "gameobject",
+          "go": "17e4b1d9-ae26-4701-a39a-1036ea5cefd4"
+        },
+        "CrouchSpeed": 145,
+        "GroundControl": 4,
+        "Head": {
+          "_type": "gameobject",
+          "go": "1e2ac3de-f456-4ec6-b2a4-16a38d22dbae"
+        },
+        "JumpForce": 400,
+        "MaxForce": 50,
+        "RunSpeed": 290,
+        "Speed": 160,
+        "WalkSpeed": 90
+      }
+    ],
+    "Children": [
+      {
+        "__guid": "17e4b1d9-ae26-4701-a39a-1036ea5cefd4",
+        "Flags": 0,
+        "Name": "Body",
+        "Position": "0,0,0",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "Sandbox.SkinnedModelRenderer",
+            "__guid": "00c8ebfe-f64b-4483-82ce-a4081e7a1dc9",
+            "BodyGroups": 341,
+            "CreateBoneObjects": false,
+            "Model": "models/citizen/citizen.vmdl",
+            "RenderType": "On",
+            "Tint": "1,1,1,1",
+            "UseAnimGraph": true
+          },
+          {
+            "__type": "Sandbox.Citizen.CitizenAnimationHelper",
+            "__guid": "0c98f773-4217-49dd-92b7-d6a8a1857a67",
+            "BodyWeight": 1,
+            "EyesWeight": 1,
+            "HeadWeight": 1,
+            "Height": 1,
+            "LookAtEnabled": false,
+            "Target": {
+              "_type": "component",
+              "component_id": "00c8ebfe-f64b-4483-82ce-a4081e7a1dc9",
+              "go": "17e4b1d9-ae26-4701-a39a-1036ea5cefd4",
+              "component_type": "SkinnedModelRenderer"
+            }
+          }
+        ]
+      },
+      {
+        "__guid": "1e2ac3de-f456-4ec6-b2a4-16a38d22dbae",
+        "Flags": 0,
+        "Name": "Head",
+        "Position": "0,0,64",
+        "Enabled": true
+      },
+      {
+        "__guid": "12ab382a-987e-4709-b31a-6c56836407a0",
+        "Flags": 0,
+        "Name": "Camera",
+        "Position": "-147.1436,0,68.93936",
+        "Tags": "maincamera",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "Sandbox.CameraComponent",
+            "__guid": "a05b3d9d-b88d-4b68-8120-5cc58256d930",
+            "BackgroundColor": "0.33333,0.46275,0.52157,1",
+            "ClearFlags": "All",
+            "FieldOfView": 60,
+            "IsMainCamera": true,
+            "Orthographic": false,
+            "OrthographicHeight": 1204,
+            "Priority": 1,
+            "RenderExcludeTags": "",
+            "RenderTags": "",
+            "TargetEye": "None",
+            "Viewport": "0,0,1,1",
+            "ZFar": 10000,
+            "ZNear": 10
+          },
+          {
+            "__type": "CameraScript",
+            "__guid": "931d05eb-d9f5-411c-8e25-1df66ff9c9f7",
+            "Body": {
+              "_type": "gameobject",
+              "go": "17e4b1d9-ae26-4701-a39a-1036ea5cefd4"
+            },
+            "Distance": 153.25,
+            "Head": {
+              "_type": "gameobject",
+              "go": "1e2ac3de-f456-4ec6-b2a4-16a38d22dbae"
+            },
+            "Player": {
+              "_type": "component",
+              "component_id": "665a22d1-f117-4805-b7f6-e61e229bd146",
+              "go": "55597454-20c7-4296-96ea-82c0885e0f54",
+              "component_type": "PlayerScript2"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__references": [],
+  "__version": 1
+}

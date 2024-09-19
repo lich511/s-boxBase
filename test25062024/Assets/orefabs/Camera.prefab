@@ -1,0 +1,42 @@
+{
+  "RootObject": {
+    "__guid": "f159d22e-2d3f-4f52-a64a-4a9eab4cdfc0",
+    "Flags": 0,
+    "Name": "camera",
+    "Tags": "maincamera",
+    "Enabled": true,
+    "NetworkMode": 0,
+    "Components": [
+      {
+        "__type": "Sandbox.CameraComponent",
+        "__guid": "870c263d-416f-480b-81d8-0a87799d33ae",
+        "BackgroundColor": "0.33333,0.46275,0.52157,1",
+        "ClearFlags": "All",
+        "FieldOfView": 60,
+        "IsMainCamera": true,
+        "Orthographic": false,
+        "OrthographicHeight": 1204,
+        "Priority": 1,
+        "RenderExcludeTags": "",
+        "RenderTags": "",
+        "TargetEye": "None",
+        "Viewport": "0,0,1,1",
+        "ZFar": 10000,
+        "ZNear": 10
+      },
+      {
+        "__type": "CameraScript",
+        "__guid": "9c62c15d-23c8-40b7-b4ea-1e200443135f",
+        "Distance": 132.79
+      }
+    ],
+    "Children": [],
+    "__variables": []
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__references": [],
+  "__version": 1
+}
